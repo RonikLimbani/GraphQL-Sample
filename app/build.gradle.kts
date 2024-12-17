@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.apollo.graphql)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.android)
+
 }
 
 android {
@@ -40,13 +43,16 @@ android {
     }
 }
 
-/*apollo{
+apollo {
     service("service") {
-        packageName.set("com.ronik.graphqlsample")
+        packageName.set("com.ronik")
     }
-}*/
+}
 
-
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
+}
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -66,4 +72,11 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(libs.apollo.runtime)
+
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+//    kapt("androidx.hilt:hilt-compiler:1.2.0")
+    implementation(libs.androidx.hilt.navigation.compose)
 }
