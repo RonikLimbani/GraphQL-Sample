@@ -31,8 +31,8 @@ Example:
 
 ## 🖼️ OutPut Screens
 
-| List Screen| Details Screen                                        | 
-|------------|-------------------------------------------------------|
+| List Screen| Details Screen | 
+|------------|----------------|
 | <img src="screenshots/countriesList.png" width="250"> | <img src="screenshots/countryDetail.png" width="250"> |
 
 
